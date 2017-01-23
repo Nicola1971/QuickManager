@@ -540,13 +540,15 @@ class Qm {
                         if (($this->autohide == 'true') && ($this->position == 'left')) {
                             $css .= '
                             <style type="text/css">
-                            #qmEditor, #qmEditorClosed { left:-47px; top: 0px; width: 53px; height:100%}
+                            #qmEditor, #qmEditorClosed {padding-left:5px; left:-47px; top: 0px; width: 53px; height:100%}
                             #qmEditor:hover, #qmEditorClosed:hover {left: 0px;}
-                            #qmEditor, #qmEditorClosed {background: none; background-color: #657587; opacity:0.5; ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; }
+                            #qmEditor, #qmEditorClosed {background: none; background-color: #657587; opacity:0.5; ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; 
+                            background-image: -webkit-linear-gradient(top, #3f4850 0%, #365462 46%, #3e5554 60%, #42554d 68%, #573d4e 100%) !important; background-image: -o-linear-gradient(top, #3f4850 0%, #365462 46%, #3e5554 60%, #42554d 68%, #573d4e 100%) !important; background-image: linear-gradient(to bottom, #3f4850 0%, #365462 46%, #3e5554 60%, #42554d 68%, #573d4e 100%) !important;}
                             #qmEditor .qmButton, .qm-edit, .qm-new {padding: 4px 4px; margin-bottom:3px;}
-                            #qmEditor .qmClose, #qmClose {padding: 8px 16px; float: left !important;}
+                            #qmEditor .qmClose, #qmClose {padding: 8px 16px; float: left !important; margin-bottom: 10px;}
                             .butttext, span.textid {display:none}
-                            #qmEditor .qmId {width:100%; background: rgba(255, 255, 255, 0.3); font-size:13px; text-align:center; margin:-5px 0 5px 3px;}                            
+                            #qmEditor .qmId {width:100%; background: rgba(255, 255, 255, 0.3); font-size:13px; text-align:center; margin:-5px 0 5px 2px;}
+                            #qmEditorClosed:after, a#qmLogoClose, a#qmLogoClose:after {display:none;}
                             </style>
                             ';
                         }
@@ -556,11 +558,13 @@ class Qm {
                             $css .= '
                             <style type="text/css">
                             #qmEditor, #qmEditorClosed {padding-left:5px; left:0px; top: 0px; width: 53px; height:100%}
-                            #qmEditor, #qmEditorClosed {background: none; background-color: #657587; opacity:0.5; ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; }
+                            #qmEditor, #qmEditorClosed {background: none; background-color: #657587; opacity:0.5; ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; 
+                            background-image: -webkit-linear-gradient(top, #3f4850 0%, #365462 46%, #3e5554 60%, #42554d 68%, #573d4e 100%) !important; background-image: -o-linear-gradient(top, #3f4850 0%, #365462 46%, #3e5554 60%, #42554d 68%, #573d4e 100%) !important; background-image: linear-gradient(to bottom, #3f4850 0%, #365462 46%, #3e5554 60%, #42554d 68%, #573d4e 100%) !important;}
                             #qmEditor .qmButton, .qm-edit, .qm-new {padding: 4px 4px; margin-bottom:3px;}
-                            #qmEditor .qmClose, #qmClose {padding: 8px 16px; float: left !important;}
+                            #qmEditor .qmClose, #qmClose {padding: 8px 16px; float: left !important; margin-bottom: 10px;}
                             .butttext, span.textid {display:none}
                             #qmEditor .qmId {width:100%; background: rgba(255, 255, 255, 0.3); font-size:13px; text-align:center; margin:-5px 0 5px 3px;}
+                            #qmEditorClosed:after, a#qmLogoClose, a#qmLogoClose:after {display:none;}
                             </style>
                             ';
                         }
@@ -570,11 +574,13 @@ class Qm {
                             <style type="text/css">
                             #qmEditor, #qmEditorClosed {padding-left:6px; right:-47px; top: 0px; width: 53px; height:100%}
                             #qmEditor:hover, #qmEditorClosed:hover {right: 0px;}
-                            #qmEditor, #qmEditorClosed {background: none; background-color: #657587; opacity:0.5; ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; }
+                             #qmEditor, #qmEditorClosed {background: none; background-color: #657587; opacity:0.5; ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; 
+                            background-image: -webkit-linear-gradient(top, #3f4850 0%, #365462 46%, #3e5554 60%, #42554d 68%, #573d4e 100%) !important; background-image: -o-linear-gradient(top, #3f4850 0%, #365462 46%, #3e5554 60%, #42554d 68%, #573d4e 100%) !important; background-image: linear-gradient(to bottom, #3f4850 0%, #365462 46%, #3e5554 60%, #42554d 68%, #573d4e 100%) !important;}
                             #qmEditor .qmButton, .qm-edit, .qm-new {padding: 4px 4px; margin-bottom:3px;}
-                            #qmEditor .qmClose, #qmClose {padding: 8px 16px; float: left !important;}
+                            #qmEditor .qmClose, #qmClose {padding: 8px 16px; float: left !important; margin-bottom: 10px;}
                             .butttext, span.textid {display:none}
-                            #qmEditor .qmId {width:100%; background: rgba(255, 255, 255, 0.3); font-size:13px; text-align:center; margin:-5px 0 5px 3px;}  
+                            #qmEditor .qmId {width:100%; background: rgba(255, 255, 255, 0.3); font-size:13px; text-align:center; margin:-5px 0 5px 3px;}
+                            #qmEditorClosed:after, a#qmLogoClose, a#qmLogoClose:after {display:none;}
                             </style>
                             ';
                         }
@@ -584,11 +590,13 @@ class Qm {
                             $css .= '
                             <style type="text/css">
                             #qmEditor, #qmEditorClosed {padding-left:6px; right:0px; top: 0px; width: 55px; height:100%}
-                            #qmEditor, #qmEditorClosed {background: none; background-color: #657587; opacity:0.5; ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; }
+                             #qmEditor, #qmEditorClosed {background: none; background-color: #657587; opacity:0.5; ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; 
+                            background-image: -webkit-linear-gradient(top, #3f4850 0%, #365462 46%, #3e5554 60%, #42554d 68%, #573d4e 100%) !important; background-image: -o-linear-gradient(top, #3f4850 0%, #365462 46%, #3e5554 60%, #42554d 68%, #573d4e 100%) !important; background-image: linear-gradient(to bottom, #3f4850 0%, #365462 46%, #3e5554 60%, #42554d 68%, #573d4e 100%) !important;}
                             #qmEditor .qmButton, .qm-edit, .qm-new {padding: 4px 4px; margin-bottom:3px;}
-                            #qmEditor .qmClose, #qmClose {padding: 8px 16px; float: left !important;}
+                            #qmEditor .qmClose, #qmClose {padding: 8px 16px; float: left !important; margin-bottom: 10px;}
                             .butttext, span.textid {display:none}
-                            #qmEditor .qmId {width:100%; background: rgba(255, 255, 255, 0.3); font-size:13px; text-align:center; margin:-5px 0 5px 2px;} 
+                            #qmEditor .qmId {width:100%; background: rgba(255, 255, 255, 0.3); font-size:13px; text-align:center; margin:-5px 0 5px 1px;} 
+                            #qmEditorClosed:after, a#qmLogoClose, a#qmLogoClose:after {display:none;}
                             </style>
                             ';
                         }
