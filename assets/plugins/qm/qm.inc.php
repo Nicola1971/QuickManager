@@ -13,7 +13,7 @@ class Qm {
   var $modx;
   
     //_______________________________________________________
-    function __construct(&$modx, $jqpath='', $loadmanagerjq='', $loadfrontendjq='', $noconflictjq='', $loadtb='', $tbwidth='', $tbheight='', $hidefields='', $hidetabs='', $hidesections='', $addbutton='', $tpltype='', $tplid='', $custombutton='', $managerbutton='', $logout='', $autohide='', $position='', $editbuttons='', $editbclass='', $newbuttons='', $newbclass='', $tvbuttons='', $tvbclass='') {
+    function __construct(&$modx, $jqpath='', $loadmanagerjq='', $loadfrontendjq='', $noconflictjq='', $loadtb='', $tbwidth='', $tbheight='', $hidefields='', $hidetabs='', $hidesections='', $addbutton='', $tpltype='', $tplid='', $custombutton='', $managerbutton='', $logout='', $autohide='', $position='', $editbuttons='', $editbclass='', $newbuttons='', $newbclass='', $tvbuttons='', $tvbclass='', $buttonStyle='', $removeBg='') {
         $this->modx = $modx;
         
         // Get plugin parameters
@@ -42,6 +42,8 @@ class Qm {
         $this->newbclass = $newbclass;
         $this->tvbuttons = $tvbuttons;
         $this->tvbclass = $tvbclass;
+        $this->buttonStyle = $buttonStyle;
+        $this->removeBg = $removeBg;
         
         // Includes
         include_once($this->modx->config['base_path'].'assets/plugins/qm/mcc.class.php');
@@ -478,11 +480,24 @@ class Qm {
     					
                         $MGR_DIR = $this->modx->getManagerPath( );
                         $css = '
-                        <link rel="stylesheet" type="text/css" href="'.$this->modx->config['site_url'].'assets/plugins/qm/css/style.css" />
+                        <link rel="stylesheet" type="text/css" href="'.$this->modx->config['site_url'].'assets/plugins/qm/css/style.css" />';
+                        
+                        $css .= '
                         <link rel="stylesheet" type="text/css" href="'.$MGR_DIR.'media/style/common/font-awesome/css/font-awesome.min.css" />
                         <!--[if IE]><link rel="stylesheet" type="text/css" href="'.$this->modx->config['site_url'].'assets/plugins/qm/css/ie.css" /><![endif]-->
                         ';
-            
+                        // Buttons Styles
+                        if ($this->buttonStyle == 'actionButtons') {
+                            $css .= '
+                            <link rel="stylesheet" type="text/css" href="'.$this->modx->config['site_url'].'assets/plugins/qm/css/actionButtons.css" />
+                            ';
+                        }
+                        else
+                        if ($this->buttonStyle == 'navButtons') {
+                            $css .= '
+                            <link rel="stylesheet" type="text/css" href="'.$this->modx->config['site_url'].'assets/plugins/qm/css/navButtons.css" />
+                            ';
+                        }
                         // Top toolbar Autohide false
                         if (($this->autohide == 'false') && ($this->position == 'top')) {
                             $css .= '
@@ -600,7 +615,28 @@ class Qm {
                             </style>
                             ';
                         }
-            
+                        // Remove background
+                        if (($this->removeBg == 'yes') && ($this->buttonStyle == 'actionButtons')) {
+                            $css .= '
+                            <style type="text/css">
+                             #qmEditor, #qmEditorClosed {background: none; background-color: transparent!important; opacity:1; ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+                            background-image: none !important; background-image: none !important; background-image: none !important;}
+                            #qmEditor .qmId {background: rgba(255, 255, 255, 0.3); font-size:13px; text-align:center;  color: #666; padding:2px;} 
+                            </style>
+                            ';
+                        }
+                        else
+                        if (($this->removeBg == 'yes') && ($this->buttonStyle == 'navButtons')) {
+                            $css .= '
+                            <style type="text/css">
+                             #qmEditor, #qmEditorClosed {background: none; background-color: transparent!important; opacity:1!important; ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=1)"; 
+                            background-image: none !important; background-image: none !important; background-image: none !important;}
+                            #qmEditor .qmId {font-size:13px; text-align:center;  color: #666; padding:1px; margin-right:2px!important;}
+                            #qmEditor .qmButton, .qm-edit, .qm-new, .qm-tv, .qm-save, .qm-cancel {transition: all; background-color:rgba(57, 81, 93, 0.8);border-color: rgba(255, 255, 255, 0.8)}
+                            #qmEditor .qmButton:hover, .qm-edit:hover, .qm-new:hover, .qm-tv:hover, .qm-save:hover, .qm-cancel:hover {background-color:rgba(57, 81, 93,.4); border-color: rgba(255, 255, 255, 1)}
+                            </style>
+                            ';
+                        }
                         // Insert jQuery and ColorBox in head if needed
                         $head = '';
                         if ($this->loadfrontendjq == 'true') $head .= '<script src="'.$this->modx->config['site_url'].$this->jqpath.'" type="text/javascript"></script>';
