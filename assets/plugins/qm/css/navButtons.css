@@ -49,9 +49,16 @@
 }
 #qmEditor .qmButton.qmClose
 {
-    padding: 6px 15px;
+    padding: 3px 10px 6px 10px;
+    color: #dedede!important;
+    background-color: Transparent;
+    border:none;
 }
-
+#qmEditor .qmButton.qmClose:hover
+{
+    color: #fff!important;
+    background-color: Transparent;
+}
 #qmEditor .qmButton:hover, .qm-edit:hover, .qm-new:hover, .qm-tv:hover, .qm-save:hover, .qm-cancel:hover
 {
   text-decoration: none;

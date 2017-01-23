@@ -472,7 +472,7 @@ class Qm {
     					<div id="qmEditor">
     					
                         <ul>
-                        <li id="qmClose"><a class="qmButton qmClose" href="#" onclick="javascript: return false;">X</a></li>
+                        <li id="qmClose"><a class="qmButton qmClose" href="#" onclick="javascript: return false;"><i class="fa fa-times-circle" aria-hidden="true"></i></a></li>
                         <li><a id="qmLogoClose" class="qmClose" href="#" onclick="javascript: return false;"></a></li>
                         '.$controls.'
                         </ul>
@@ -610,7 +610,7 @@ class Qm {
                             #qmEditor .qmButton, .qm-edit, .qm-new {padding: 4px 4px; margin-bottom:3px;}
                             #qmEditor .qmClose, #qmClose {padding: 8px 16px; float: left !important; margin-bottom: 10px;}
                             .butttext, span.textid {display:none}
-                            #qmEditor .qmId {width:100%; background: rgba(255, 255, 255, 0.3); font-size:13px; text-align:center; margin:-5px 0 5px 1px;} 
+                            #qmEditor .qmId {width:100%; background: rgba(255, 255, 255, 0.3); font-size:13px; text-align:center; margin:-5px 0 5px 2px;} 
                             #qmEditorClosed:after, a#qmLogoClose, a#qmLogoClose:after {display:none;}
                             </style>
                             ';
