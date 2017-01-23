@@ -64,10 +64,14 @@
   text-decoration: none;
   background-color: rgba(255,255,255,.3);
 }
-a.colorbox.cboxElement:hover, .qm-cancel a:hover, .qm-save a:hover    
+.qm-cancel a:hover, .qm-save a:hover    
 {
   color: #FFF !important;
 }
+a.colorbox.cboxElement{color:#FFF!important; background-color:rgba(57, 81, 93, 0.8);border-color: rgba(255, 255, 255, 0.8)}
+a.colorbox.cboxElement:hover{color:#FFF!important; background-color:rgba(57, 81, 93,.4); border-color: rgba(255, 255, 255, 1)}
+
+
 #qmEditor .qmButton:active 
 {
   background-color: #3189ba;
