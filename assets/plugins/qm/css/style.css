@@ -291,17 +291,3 @@ a:hover#qmLogoClose:after
 
 
 
-@media only screen and (max-width: 728px) {
-.butttext {display:none}
-.butticon {display:inline!important}
-#qmEditor, #qmEditorClosed {height: 48px!important;}
-}
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-.butttext {display:none}
-.butticon {display:inline!important}
-
-}
